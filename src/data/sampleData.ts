@@ -1,0 +1,181 @@
+import { Farmer, Buyer, Product } from '../types';
+
+export const sampleFarmers: Farmer[] = [
+  {
+    id: '1',
+    name: 'Maria Rodriguez',
+    email: 'maria@farm.com',
+    type: 'farmer',
+    location: 'Valencia, Spain',
+    verified: true,
+    rating: 4.8,
+    createdAt: '2024-01-15',
+    farmName: 'Sunny Valley Organics',
+    farmSize: '25 hectares',
+    certifications: ['Organic Certified', 'Fair Trade'],
+    farmingMethods: ['Organic', 'Sustainable'],
+    specialties: ['Citrus Fruits', 'Vegetables'],
+    description: 'Family-owned organic farm with 3 generations of farming experience. Specializing in premium citrus fruits and seasonal vegetables.'
+  },
+  {
+    id: '2',
+    name: 'James Okoye',
+    email: 'james@africanfresh.com',
+    type: 'farmer',
+    location: 'Lagos, Nigeria',
+    verified: true,
+    rating: 4.9,
+    createdAt: '2024-02-01',
+    farmName: 'African Fresh Produce',
+    farmSize: '40 hectares',
+    certifications: ['GlobalGAP', 'HACCP'],
+    farmingMethods: ['Conventional', 'IPM'],
+    specialties: ['Tropical Fruits', 'Root Vegetables'],
+    description: 'Leading supplier of tropical fruits and root vegetables in West Africa. Committed to quality and sustainable farming practices.'
+  },
+  {
+    id: '3',
+    name: 'Rajesh Patel',
+    email: 'rajesh@spicevalley.in',
+    type: 'farmer',
+    location: 'Gujarat, India',
+    verified: true,
+    rating: 4.7,
+    createdAt: '2024-01-20',
+    farmName: 'Spice Valley Farms',
+    farmSize: '15 hectares',
+    certifications: ['Organic India', 'Export Quality'],
+    farmingMethods: ['Organic', 'Traditional'],
+    specialties: ['Spices', 'Herbs', 'Grains'],
+    description: 'Premium spice and herb producer with traditional farming methods passed down through generations.'
+  }
+];
+
+export const sampleBuyers: Buyer[] = [
+  {
+    id: 'b1',
+    name: 'Sarah Chen',
+    email: 'sarah@freshmarket.com',
+    type: 'buyer',
+    location: 'Toronto, Canada',
+    verified: true,
+    rating: 4.6,
+    createdAt: '2024-01-10',
+    businessType: 'retail',
+    companyName: 'Fresh Market Chain',
+    purchasePreferences: ['Organic', 'Local', 'Seasonal']
+  },
+  {
+    id: 'b2',
+    name: 'Michael Thompson',
+    email: 'michael@globalwholesale.com',
+    type: 'buyer',
+    location: 'London, UK',
+    verified: true,
+    rating: 4.8,
+    createdAt: '2024-02-05',
+    businessType: 'wholesale',
+    companyName: 'Global Wholesale Ltd',
+    purchasePreferences: ['Bulk Orders', 'Premium Quality', 'International']
+  }
+];
+
+export const sampleProducts: Product[] = [
+  {
+    id: 'p1',
+    name: 'Organic Roma Tomatoes',
+    category: 'Vegetables',
+    description: 'Premium organic roma tomatoes, perfect for cooking and sauces. Grown using sustainable methods.',
+    price: 3.50,
+    currency: 'USD',
+    unit: 'kg',
+    quantity: 500,
+    images: ['/src/assets/tomatoes.jpg'],
+    farmerId: '1',
+    farmer: sampleFarmers[0],
+    quality: 'Organic',
+    harvestDate: '2024-07-10',
+    expiryDate: '2024-07-20',
+    availability: 'In Stock',
+    seasonal: true,
+    location: 'Valencia, Spain',
+    rating: 4.8,
+    reviews: 45
+  },
+  {
+    id: 'p2',
+    name: 'Fresh Iceberg Lettuce',
+    category: 'Vegetables',
+    description: 'Crisp, fresh iceberg lettuce heads. Harvested daily for maximum freshness.',
+    price: 2.25,
+    currency: 'USD',
+    unit: 'head',
+    quantity: 200,
+    images: ['/src/assets/lettuce.jpg'],
+    farmerId: '1',
+    farmer: sampleFarmers[0],
+    quality: 'Premium',
+    harvestDate: '2024-07-12',
+    expiryDate: '2024-07-19',
+    availability: 'In Stock',
+    seasonal: false,
+    location: 'Valencia, Spain',
+    rating: 4.6,
+    reviews: 32
+  },
+  {
+    id: 'p3',
+    name: 'Organic Carrots',
+    category: 'Vegetables',
+    description: 'Sweet, crunchy organic carrots. Rich in beta-carotene and perfect for cooking or snacking.',
+    price: 2.80,
+    currency: 'USD',
+    unit: 'kg',
+    quantity: 300,
+    images: ['/src/assets/carrots.jpg'],
+    farmerId: '2',
+    farmer: sampleFarmers[1],
+    quality: 'Organic',
+    harvestDate: '2024-07-08',
+    expiryDate: '2024-08-08',
+    availability: 'In Stock',
+    seasonal: false,
+    location: 'Lagos, Nigeria',
+    rating: 4.9,
+    reviews: 28
+  },
+  {
+    id: 'p4',
+    name: 'Fresh Basil Leaves',
+    category: 'Herbs',
+    description: 'Aromatic fresh basil leaves, perfect for cooking and garnishing. Grown organically.',
+    price: 8.50,
+    currency: 'USD',
+    unit: 'bunch',
+    quantity: 150,
+    images: ['/src/assets/lettuce.jpg'],
+    farmerId: '3',
+    farmer: sampleFarmers[2],
+    quality: 'Organic',
+    harvestDate: '2024-07-13',
+    expiryDate: '2024-07-18',
+    availability: 'In Stock',
+    seasonal: true,
+    location: 'Gujarat, India',
+    rating: 4.7,
+    reviews: 19
+  }
+];
+
+export const categories = [
+  'All Categories',
+  'Vegetables',
+  'Fruits',
+  'Grains',
+  'Herbs',
+  'Spices',
+  'Root Vegetables',
+  'Leafy Greens'
+];
+
+export const qualityFilters = ['All', 'Premium', 'Standard', 'Organic'];
