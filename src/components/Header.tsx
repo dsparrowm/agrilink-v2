@@ -58,6 +58,12 @@ export function Header({ cartItemCount = 0 }: HeaderProps) {
             <Link to="/farmers" className="text-foreground hover:text-primary transition-colors">
               Farmers
             </Link>
+            <Link to="/farmer-dashboard" className="text-foreground hover:text-primary transition-colors">
+              Farmer Dashboard
+            </Link>
+            <Link to="/buyer-dashboard" className="text-foreground hover:text-primary transition-colors">
+              Buyer Dashboard
+            </Link>
             <Link to="/about" className="text-foreground hover:text-primary transition-colors">
               About
             </Link>
@@ -136,6 +142,20 @@ export function Header({ cartItemCount = 0 }: HeaderProps) {
                 onClick={() => setIsMenuOpen(false)}
               >
                 Farmers
+              </Link>
+              <Link 
+                to="/farmer-dashboard" 
+                className="text-foreground hover:text-primary transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Farmer Dashboard
+              </Link>
+              <Link 
+                to="/buyer-dashboard" 
+                className="text-foreground hover:text-primary transition-colors py-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Buyer Dashboard
               </Link>
               <Link 
                 to="/about" 
