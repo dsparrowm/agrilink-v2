@@ -48,6 +48,38 @@ export const sampleFarmers: Farmer[] = [
     farmingMethods: ['Organic', 'Traditional'],
     specialties: ['Spices', 'Herbs', 'Grains'],
     description: 'Premium spice and herb producer with traditional farming methods passed down through generations.'
+  },
+  {
+    id: '4',
+    name: 'Ana Silva',
+    email: 'ana@tropicalfarms.br',
+    type: 'farmer',
+    location: 'São Paulo, Brazil',
+    verified: true,
+    rating: 4.6,
+    createdAt: '2024-01-25',
+    farmName: 'Tropical Harvest Farms',
+    farmSize: '35 hectares',
+    certifications: ['Rainforest Alliance', 'Organic'],
+    farmingMethods: ['Organic', 'Agroforestry'],
+    specialties: ['Tropical Fruits', 'Coffee', 'Nuts'],
+    description: 'Sustainable tropical farming with focus on biodiversity and eco-friendly practices. Specializing in exotic fruits and premium coffee beans.'
+  },
+  {
+    id: '5',
+    name: 'Pierre Dubois',
+    email: 'pierre@frenchfields.fr',
+    type: 'farmer',
+    location: 'Provence, France',
+    verified: true,
+    rating: 4.9,
+    createdAt: '2024-02-10',
+    farmName: 'French Fields Estate',
+    farmSize: '20 hectares',
+    certifications: ['EU Organic', 'AOC'],
+    farmingMethods: ['Organic', 'Biodynamic'],
+    specialties: ['Herbs', 'Lavender', 'Wine Grapes'],
+    description: 'Traditional French farming estate specializing in aromatic herbs, lavender, and premium wine grapes using biodynamic methods.'
   }
 ];
 

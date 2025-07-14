@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Header } from "@/components/Header";
+// Header removed as requested
 import { 
   ShoppingCart, 
   Package, 
@@ -58,7 +58,6 @@ const BuyerDashboard = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
