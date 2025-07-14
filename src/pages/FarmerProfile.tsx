@@ -1,3 +1,4 @@
+import { useParams, useNavigate } from 'react-router-dom';
 import { Header } from '@/components/Header';
 import { ProductCard } from '@/components/ProductCard';
 import { Button } from '@/components/ui/button';
@@ -14,20 +15,63 @@ import {
   Share2,
   Calendar,
   Users,
-  Truck
+  Truck,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import { sampleFarmers, sampleProducts } from '@/data/sampleData';
 
 export default function FarmerProfile() {
-  // For demo, using the first farmer
-  const farmer = sampleFarmers[0];
+  const { id } = useParams();
+  const navigate = useNavigate();
+  
+  // Get farmer by ID from URL, default to first farmer if no ID
+  const farmerIndex = id ? sampleFarmers.findIndex(f => f.id === id) : 0;
+  const farmer = sampleFarmers[farmerIndex] || sampleFarmers[0];
   const farmerProducts = sampleProducts.filter(p => p.farmerId === farmer.id);
+  
+  const handlePreviousFarmer = () => {
+    const prevIndex = farmerIndex > 0 ? farmerIndex - 1 : sampleFarmers.length - 1;
+    navigate(`/farmers/${sampleFarmers[prevIndex].id}`);
+  };
+  
+  const handleNextFarmer = () => {
+    const nextIndex = farmerIndex < sampleFarmers.length - 1 ? farmerIndex + 1 : 0;
+    navigate(`/farmers/${sampleFarmers[nextIndex].id}`);
+  };
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
       
       <main className="container mx-auto px-4 py-8">
+        {/* Navigation */}
+        <div className="flex items-center justify-between mb-6">
+          <Button
+            variant="outline"
+            onClick={handlePreviousFarmer}
+            className="flex items-center gap-2"
+          >
+            <ChevronLeft className="w-4 h-4" />
+            Previous Farmer
+          </Button>
+          
+          <div className="text-center">
+            <p className="text-sm text-muted-foreground">
+              Farmer {farmerIndex + 1} of {sampleFarmers.length}
+            </p>
+          </div>
+          
+          <Button
+            variant="outline"
+            onClick={handleNextFarmer}
+            className="flex items-center gap-2"
+          >
+            Next Farmer
+            <ChevronRight className="w-4 h-4" />
+          </Button>
+        </div>
+
         {/* Farmer Header */}
         <div className="mb-8">
           <Card className="overflow-hidden">
