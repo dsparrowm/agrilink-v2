@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-// Header removed as requested
+import { DashboardHeader } from "@/components/DashboardHeader";
 import { 
   Plus, 
   Package, 
@@ -60,6 +60,7 @@ const FarmerDashboard = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <DashboardHeader showCart={false} />
       
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">

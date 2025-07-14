@@ -69,21 +69,8 @@ export function Header({ cartItemCount = 0 }: HeaderProps) {
             </Link>
           </nav>
 
-          {/* Action Buttons */}
+          {/* Action Buttons - Cart only for homepage */}
           <div className="flex items-center space-x-3">
-            {/* Notifications */}
-            <Button variant="ghost" size="sm" className="hidden md:flex relative">
-              <Bell className="w-4 h-4" />
-              <Badge className="absolute -top-1 -right-1 px-1 min-w-[1.25rem] h-5">
-                3
-              </Badge>
-            </Button>
-
-            {/* Messages */}
-            <Button variant="ghost" size="sm" className="hidden md:flex">
-              <MessageCircle className="w-4 h-4" />
-            </Button>
-
             {/* Cart */}
             <Button variant="ghost" size="sm" className="relative">
               <ShoppingCart className="w-4 h-4" />
@@ -92,11 +79,6 @@ export function Header({ cartItemCount = 0 }: HeaderProps) {
                   {cartItemCount}
                 </Badge>
               )}
-            </Button>
-
-            {/* User Menu */}
-            <Button variant="ghost" size="sm">
-              <User className="w-4 h-4" />
             </Button>
 
             {/* Mobile Menu Button */}
@@ -164,16 +146,7 @@ export function Header({ cartItemCount = 0 }: HeaderProps) {
               >
                 About
               </Link>
-              <div className="flex space-x-4 pt-2">
-                <Button variant="ghost" size="sm" className="flex items-center space-x-2">
-                  <Bell className="w-4 h-4" />
-                  <span>Notifications</span>
-                </Button>
-                <Button variant="ghost" size="sm" className="flex items-center space-x-2">
-                  <MessageCircle className="w-4 h-4" />
-                  <span>Messages</span>
-                </Button>
-              </div>
+              {/* Removed notifications and messages from mobile menu */}
             </nav>
           </div>
         )}

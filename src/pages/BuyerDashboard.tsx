@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-// Header removed as requested
+import { DashboardHeader } from "@/components/DashboardHeader";
 import { 
   ShoppingCart, 
   Package, 
@@ -23,6 +23,7 @@ import {
 
 const BuyerDashboard = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [cartItems] = useState([{ id: 1 }, { id: 2 }]); // Mock cart items
 
   const buyerStats = {
     totalOrders: 24,
@@ -58,6 +59,7 @@ const BuyerDashboard = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <DashboardHeader showCart={true} cartItemCount={cartItems.length} />
       
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8">
