@@ -4,12 +4,12 @@ import { ProductCard } from '@/components/ProductCard';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { 
-  Truck, 
-  Shield, 
-  Globe, 
-  Users, 
-  Leaf, 
+import {
+  Truck,
+  Shield,
+  Globe,
+  Users,
+  Leaf,
   Star,
   ArrowRight,
   CheckCircle
@@ -24,7 +24,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <Hero />
-      
+
       {/* Featured Products */}
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
@@ -39,7 +39,7 @@ const Index = () => {
               Discover premium quality produce from our verified farmers worldwide
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {featuredProducts.map((product) => (
               <ProductCard
@@ -50,7 +50,7 @@ const Index = () => {
               />
             ))}
           </div>
-          
+
           <div className="text-center">
             <Button size="lg" variant="default" onClick={() => window.location.href = '/marketplace'}>
               Browse All Products
@@ -65,13 +65,13 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Why Choose FarmConnect?
+              Why Choose Agrilink?
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We bridge the gap between rural farmers and global markets
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <Card className="text-center hover:shadow-fresh transition-all duration-300">
               <CardHeader>
@@ -82,12 +82,12 @@ const Index = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Connect with farmers and buyers from over 50 countries worldwide. 
+                  Connect with farmers and buyers from over 50 countries worldwide.
                   Access fresh produce from every corner of the globe.
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card className="text-center hover:shadow-fresh transition-all duration-300">
               <CardHeader>
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -97,12 +97,12 @@ const Index = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  All farmers are verified for quality and authenticity. 
+                  All farmers are verified for quality and authenticity.
                   We ensure you get the freshest produce with full traceability.
                 </p>
               </CardContent>
             </Card>
-            
+
             <Card className="text-center hover:shadow-fresh transition-all duration-300">
               <CardHeader>
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -112,7 +112,7 @@ const Index = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Efficient cold-chain logistics ensure your produce arrives fresh. 
+                  Efficient cold-chain logistics ensure your produce arrives fresh.
                   Track your orders from farm to your doorstep.
                 </p>
               </CardContent>
@@ -135,7 +135,7 @@ const Index = () => {
               Get to know the dedicated farmers who bring you the freshest produce
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredFarmers.map((farmer) => (
               <Card key={farmer.id} className="overflow-hidden hover:shadow-fresh transition-all duration-300">
@@ -229,7 +229,7 @@ const Index = () => {
                   <Leaf className="w-6 h-6 text-primary-foreground" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold">FarmConnect</h3>
+                  <h3 className="text-lg font-bold">Agrilink</h3>
                   <p className="text-sm opacity-70">Global Harvest</p>
                 </div>
               </div>
@@ -237,7 +237,7 @@ const Index = () => {
                 Connecting farmers to global markets for a sustainable future.
               </p>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-4">Platform</h4>
               <div className="space-y-2 text-sm opacity-70">
@@ -247,7 +247,7 @@ const Index = () => {
                 <p>Pricing</p>
               </div>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-4">Support</h4>
               <div className="space-y-2 text-sm opacity-70">
@@ -257,7 +257,7 @@ const Index = () => {
                 <p>API</p>
               </div>
             </div>
-            
+
             <div>
               <h4 className="font-semibold mb-4">Company</h4>
               <div className="space-y-2 text-sm opacity-70">
@@ -268,9 +268,9 @@ const Index = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="border-t border-white/20 mt-8 pt-8 text-center text-sm opacity-70">
-            © 2024 FarmConnect Global. All rights reserved.
+            © 2024 Agrilink Global. All rights reserved.
           </div>
         </div>
       </footer>

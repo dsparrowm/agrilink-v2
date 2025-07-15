@@ -9,10 +9,10 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { 
-  User, 
-  Settings, 
-  LogOut, 
+import {
+  User,
+  Settings,
+  LogOut,
   UserCircle,
   HelpCircle,
   CreditCard
@@ -27,12 +27,12 @@ export function UserDropdown() {
     // Clear any stored user data (localStorage, sessionStorage, etc.)
     localStorage.removeItem('authToken');
     sessionStorage.clear();
-    
+
     toast({
       title: "Logged out successfully",
       description: "You have been logged out of your account.",
     });
-    
+
     // Redirect to homepage
     navigate('/');
   };
@@ -40,10 +40,14 @@ export function UserDropdown() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="relative h-8 w-8 rounded-full">
+        <Button
+          variant="ghost"
+          size="sm"
+          className="relative h-8 w-8 rounded-full border-2 border-primary/20 hover:border-primary/40 hover:bg-primary/10 transition-colors"
+        >
           <Avatar className="h-8 w-8">
             <AvatarImage src="/placeholder.svg" alt="User avatar" />
-            <AvatarFallback>
+            <AvatarFallback className="bg-black text-white">
               <User className="h-4 w-4" />
             </AvatarFallback>
           </Avatar>
@@ -84,7 +88,7 @@ export function UserDropdown() {
           </Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem 
+        <DropdownMenuItem
           className="cursor-pointer text-red-600 focus:text-red-600"
           onClick={handleLogout}
         >

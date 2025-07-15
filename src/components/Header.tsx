@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Search, 
-  ShoppingCart, 
-  User, 
-  MessageCircle, 
+import {
+  Search,
+  ShoppingCart,
+  User,
+  MessageCircle,
   Bell,
   Menu,
   Leaf
@@ -31,7 +31,7 @@ export function Header({ cartItemCount = 0 }: HeaderProps) {
               <Leaf className="w-6 h-6 text-primary-foreground" />
             </div>
             <div>
-              <h1 className="text-xl font-bold text-primary">FarmConnect</h1>
+              <h1 className="text-xl font-bold text-primary">Agrilink</h1>
               <p className="text-xs text-muted-foreground">Global Harvest</p>
             </div>
           </Link>
@@ -71,20 +71,35 @@ export function Header({ cartItemCount = 0 }: HeaderProps) {
 
           {/* Action Buttons - Cart only for homepage */}
           <div className="flex items-center space-x-3">
+            {/* Authentication Buttons */}
+            <Link to="/login">
+              <Button variant="ghost" size="sm">
+                <User className="w-4 h-4 mr-2" />
+                Login
+              </Button>
+            </Link>
+            <Link to="/register">
+              <Button variant="default" size="sm">
+                Sign Up
+              </Button>
+            </Link>
+
             {/* Cart */}
-            <Button variant="ghost" size="sm" className="relative">
-              <ShoppingCart className="w-4 h-4" />
-              {cartItemCount > 0 && (
-                <Badge className="absolute -top-1 -right-1 px-1 min-w-[1.25rem] h-5">
-                  {cartItemCount}
-                </Badge>
-              )}
-            </Button>
+            <Link to="/cart">
+              <Button variant="ghost" size="sm" className="relative">
+                <ShoppingCart className="w-4 h-4" />
+                {cartItemCount > 0 && (
+                  <Badge className="absolute -top-1 -right-1 px-1 min-w-[1.25rem] h-5">
+                    {cartItemCount}
+                  </Badge>
+                )}
+              </Button>
+            </Link>
 
             {/* Mobile Menu Button */}
-            <Button 
-              variant="ghost" 
-              size="sm" 
+            <Button
+              variant="ghost"
+              size="sm"
               className="md:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -111,41 +126,57 @@ export function Header({ cartItemCount = 0 }: HeaderProps) {
         {isMenuOpen && (
           <div className="md:hidden border-t border-border py-4">
             <nav className="flex flex-col space-y-3">
-              <Link 
-                to="/marketplace" 
+              <Link
+                to="/marketplace"
                 className="text-foreground hover:text-primary transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Marketplace
               </Link>
-              <Link 
-                to="/farmers" 
+              <Link
+                to="/farmers"
                 className="text-foreground hover:text-primary transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Farmers
               </Link>
-              <Link 
-                to="/farmer-dashboard" 
+              <Link
+                to="/farmer-dashboard"
                 className="text-foreground hover:text-primary transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Farmer Dashboard
               </Link>
-              <Link 
-                to="/buyer-dashboard" 
+              <Link
+                to="/buyer-dashboard"
                 className="text-foreground hover:text-primary transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Buyer Dashboard
               </Link>
-              <Link 
-                to="/about" 
+              <Link
+                to="/about"
                 className="text-foreground hover:text-primary transition-colors py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </Link>
+              <div className="border-t pt-4 mt-4">
+                <Link
+                  to="/login"
+                  className="text-foreground hover:text-primary transition-colors py-2 block"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/register"
+                  className="text-foreground hover:text-primary transition-colors py-2 block"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Sign Up
+                </Link>
+              </div>
               {/* Removed notifications and messages from mobile menu */}
             </nav>
           </div>

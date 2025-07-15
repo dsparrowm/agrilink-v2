@@ -1,12 +1,13 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { 
-  Heart, 
-  ShoppingCart, 
-  Star, 
-  MapPin, 
+import {
+  Heart,
+  ShoppingCart,
+  Star,
+  MapPin,
   Calendar,
   Leaf,
   Shield
@@ -20,13 +21,14 @@ interface ProductCardProps {
   isFavorite?: boolean;
 }
 
-export function ProductCard({ 
-  product, 
-  onAddToCart, 
-  onToggleFavorite, 
-  isFavorite = false 
+export function ProductCard({
+  product,
+  onAddToCart,
+  onToggleFavorite,
+  isFavorite = false
 }: ProductCardProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
 
   const formatPrice = (price: number, currency: string) => {
     return new Intl.NumberFormat('en-US', {
@@ -53,7 +55,7 @@ export function ProductCard({
   };
 
   return (
-    <Card 
+    <Card
       className="group overflow-hidden transition-all duration-300 hover:shadow-fresh hover:-translate-y-1 cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -65,9 +67,9 @@ export function ProductCard({
           alt={product.name}
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
-        
+
         {/* Quality Badge */}
-        <Badge 
+        <Badge
           className={`absolute top-3 left-3 ${getQualityColor(product.quality)} border-0 font-medium`}
         >
           {product.quality === 'Organic' && <Leaf className="w-3 h-3 mr-1" />}
@@ -84,15 +86,14 @@ export function ProductCard({
             onToggleFavorite?.(product.id);
           }}
         >
-          <Heart 
-            className={`w-4 h-4 transition-colors ${
-              isFavorite ? 'fill-red-500 text-red-500' : 'text-gray-600'
-            }`} 
+          <Heart
+            className={`w-4 h-4 transition-colors ${isFavorite ? 'fill-red-500 text-red-500' : 'text-gray-600'
+              }`}
           />
         </Button>
 
         {/* Availability Badge */}
-        <Badge 
+        <Badge
           className={`absolute bottom-3 left-3 ${getAvailabilityColor(product.availability)} border-0 text-xs`}
         >
           {product.availability}
@@ -178,6 +179,7 @@ export function ProductCard({
             onClick={(e) => {
               e.stopPropagation();
               onAddToCart?.(product);
+              navigate('/cart');
             }}
             disabled={product.availability === 'Out of Stock'}
           >

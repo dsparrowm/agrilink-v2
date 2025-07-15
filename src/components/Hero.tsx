@@ -17,7 +17,7 @@ export function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
-      <div 
+      <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroImage})` }}
       >
@@ -38,7 +38,7 @@ export function Hero() {
 
           {/* Subtitle */}
           <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Direct marketplace connecting rural farmers with global buyers. 
+            Direct marketplace connecting rural farmers with global buyers.
             Fresh produce, fair prices, sustainable agriculture.
           </p>
 
@@ -56,9 +56,9 @@ export function Hero() {
                   onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
                 />
               </div>
-              <Button 
-                variant="hero" 
-                size="lg" 
+              <Button
+                variant="hero"
+                size="lg"
                 onClick={handleSearch}
                 className="px-8 py-3 text-lg font-semibold"
               >
@@ -69,17 +69,17 @@ export function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button 
-              variant="hero" 
-              size="lg" 
+            <Button
+              variant="hero"
+              size="lg"
               className="px-8 py-4 text-lg font-semibold"
               onClick={() => window.location.href = '/marketplace'}
             >
               Explore Marketplace
             </Button>
-            <Button 
-              variant="harvest" 
-              size="lg" 
+            <Button
+              variant="harvest"
+              size="lg"
               className="px-8 py-4 text-lg font-semibold"
               onClick={() => window.location.href = '/farmers'}
             >
@@ -122,11 +122,11 @@ export function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
