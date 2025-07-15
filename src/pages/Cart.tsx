@@ -37,7 +37,7 @@ const Cart = () => {
             farmer: "Green Valley Farm",
             price: 2.50,
             quantity: 3,
-            image: "/src/assets/tomatoes.jpg",
+            image: "/assets/tomatoes.jpg",
             unit: "kg",
             location: "California, USA",
             deliveryTime: "2-3 days"
@@ -48,7 +48,7 @@ const Cart = () => {
             farmer: "Sunrise Organic",
             price: 1.80,
             quantity: 2,
-            image: "/src/assets/carrots.jpg",
+            image: "/assets/carrots.jpg",
             unit: "kg",
             location: "Oregon, USA",
             deliveryTime: "1-2 days"
@@ -59,7 +59,7 @@ const Cart = () => {
             farmer: "Farm Fresh Co.",
             price: 3.20,
             quantity: 1,
-            image: "/src/assets/lettuce.jpg",
+            image: "/assets/lettuce.jpg",
             unit: "kg",
             location: "Washington, USA",
             deliveryTime: "1-2 days"
